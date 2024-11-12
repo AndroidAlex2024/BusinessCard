@@ -65,7 +65,7 @@ val image = painterResource(R.drawable.android_logo)
 
             )
             Text(
-                text = "he a new delevoper",
+                text = "he a new delevoper ",
                 fontWeight = FontWeight.Bold,
                 fontSize = 20.sp,
                 modifier = modifier
