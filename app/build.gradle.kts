@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.businesscard"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.businesscard"
