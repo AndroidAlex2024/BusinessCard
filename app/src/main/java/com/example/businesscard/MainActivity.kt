@@ -49,10 +49,10 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     Column(
 //horizontalAlignment = Alignment.CenterHorizontally,
         horizontalAlignment = Alignment.CenterHorizontally,
-        //verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.SpaceBetween,
         modifier = modifier.fillMaxSize()
         //Modifier
-            .padding(top=60.dp,start=20.dp,end=20.dp,bottom=20.dp)
+            .padding(top=275.dp,start=20.dp,end=20.dp,bottom=20.dp)
            // .background(Color.Blue)
     ) {
         Column (
@@ -64,7 +64,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                // .fillMaxHeight()
         ){
 
-val         image = painterResource(R.drawable.android_logo)
+            val  image = painterResource(R.drawable.android_logo)
             Image(
                 painter = image,
                 contentDescription = null,
