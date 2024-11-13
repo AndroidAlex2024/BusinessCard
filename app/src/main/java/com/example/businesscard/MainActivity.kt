@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             BusinessCardTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+
                     Greeting(
                         dev_name = stringResource(R.string.dev_name),
                         dev_desc = stringResource(R.string.dev_desc),
@@ -45,9 +45,8 @@ class MainActivity : ComponentActivity() {
                         dev_share = stringResource(R.string.dev_share),
                         dev_mail = stringResource(R.string.dev_mail),
 
-                        modifier = Modifier.padding(innerPadding)
                     )
-                }
+
             }
         }
     }
