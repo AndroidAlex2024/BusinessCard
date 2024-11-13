@@ -8,19 +8,23 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.absolutePadding
-import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -44,75 +48,135 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// Created by AndroidAlex2024 for learn https://developer.android.com/codelabs/basic-android-kotlin-compose-business-card#0
+
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Column(
-//horizontalAlignment = Alignment.CenterHorizontally,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.SpaceBetween,
-        modifier = modifier.fillMaxSize()
-        //Modifier
-            .padding(top=275.dp,start=20.dp,end=20.dp,bottom=20.dp)
-           // .background(Color.Blue)
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(Color(0xFFD2E8D4))
     ) {
-        Column (
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = modifier
-                .padding(top=0.dp,start=0.dp,end=0.dp,bottom=0.dp)
-                .background(Color.Red)
-               // .fillMaxHeight()
-        ){
+        Column(
 
-            val  image = painterResource(R.drawable.android_logo)
-            Image(
-                painter = image,
-                contentDescription = null,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceBetween,
+            modifier = modifier
+                .fillMaxSize()
+                .padding(top = 275.dp, start = 20.dp, end = 20.dp, bottom = 40.dp)
+
+        ) {
+            Column(
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = modifier
+                    .padding(top = 0.dp, start = 0.dp, end = 0.dp, bottom = 0.dp)
+
+
+            ) {
+
+                val image = painterResource(R.drawable.android_logo)
+                Image(
+                    painter = image,
+                    contentDescription = null,
+                    Modifier
+
+                        .background(Color(0xFF073042))
+                        .size(105.dp, 105.dp)
+                )
+                Text(
+                    text = stringResource(R.string.dev_name),
+                    fontSize = 40.sp,
+                    modifier = modifier
+                        .padding(top = 5.dp)
+
+                )
+                Text(
+                    text = stringResource(R.string.dev_desc),
+                    fontWeight = FontWeight.Bold,
+                    color=Color(0xFF1A794B),
+                    fontSize = 14.sp,
+                    modifier = modifier
+                        .padding(top = 5.dp)
+                )
+            }
+            Column(
+                verticalArrangement = Arrangement.Bottom,
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = modifier
+                    .fillMaxWidth()
+                    .padding(top = 10.dp, bottom = 10.dp)
+
+            ) {
+
+                Row (
+
+
+                ){
+                    val image = painterResource(R.drawable.phone)
+                    Image(
+                        painter = image,
+                        contentDescription = null,
+                        colorFilter = ColorFilter.tint(Color(0xFF1A794B)),
+                        modifier = modifier
+                            .size(24.dp, 24.dp)
+
+                    )
+                    Text(
+                        text = stringResource(R.string.dev_phone),
                         Modifier
-                            .padding(start=80.dp,end=80.dp)
-                            .background(Color.Blue)
-            )
-            Text(
-                text = "AndroidAlex2024",
-                fontWeight = FontWeight.Bold,
-                fontSize = 30.sp,
-                modifier = modifier
+                            .padding(start = 25.dp)
+                            .width(200.dp)
+                    )
+                }
+                Row (
+                    modifier = modifier
+                    .padding(top=5.dp)
+                ){
+                    val image = painterResource(R.drawable.share)
+                    Image(
+                        painter = image,
+                        contentDescription = null,
+                        colorFilter = ColorFilter.tint(Color(0xFF1A794B)),
+                        modifier = modifier
+                            .size(24.dp, 24.dp)
 
-            )
-            Text(
-                text = "he a new delevoper ",
-                fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
-                modifier = modifier
-            )
-        }
-        Column (
-            verticalArrangement = Arrangement.Bottom,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = modifier
-                //.padding(top=120.dp,start=0.dp,end=0.dp,bottom=0.dp)
-                .background(Color.Red)
-                .fillMaxWidth()
+                    )
+                    Text(
+                        text = stringResource(R.string.dev_share),
+                        modifier = modifier
+                            .padding(start = 25.dp)
+                            .width(200.dp)
 
-        ){
+                    )
+                }
+                Row (
+                    modifier = modifier
+                        .padding(top=5.dp)
+                ){
+                    val image = painterResource(R.drawable.mail)
+                    Image(
+                        painter = image,
+                        contentDescription = null,
+                        colorFilter = ColorFilter.tint(Color(0xFF1A794B)),
+                        modifier = modifier
+                            .size(24.dp, 24.dp)
 
-            Text(
-                text = "+7 950 000 00 00",
-                modifier = modifier
-            )
-            Text(
-                text = "email: ",
-                modifier = modifier
-            )
-            Text(
-                text = "AndroidAlex2024.ololo@gmail.com",
-                modifier = modifier
-            )
+                    )
+                    Text(
+                        text = stringResource(R.string.dev_mail),
+                        modifier = modifier
+                            .padding(start = 25.dp)
+                            .width(200.dp)
+                    )
+                }
+            }
         }
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+@Preview(showBackground = true,
+)
 @Composable
 fun GreetingPreview() {
     BusinessCardTheme {
