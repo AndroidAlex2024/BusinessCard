@@ -39,7 +39,12 @@ class MainActivity : ComponentActivity() {
             BusinessCardTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        dev_name = stringResource(R.string.dev_name),
+                        dev_desc = stringResource(R.string.dev_desc),
+                        dev_phone = stringResource(R.string.dev_phone),
+                        dev_share = stringResource(R.string.dev_share),
+                        dev_mail = stringResource(R.string.dev_mail),
+
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -51,7 +56,7 @@ class MainActivity : ComponentActivity() {
 // Created by AndroidAlex2024 for learn https://developer.android.com/codelabs/basic-android-kotlin-compose-business-card#0
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(dev_name: String, dev_desc: String, dev_phone: String, dev_share: String, dev_mail: String, modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -85,14 +90,14 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                         .size(105.dp, 105.dp)
                 )
                 Text(
-                    text = stringResource(R.string.dev_name),
+                    text = dev_name,
                     fontSize = 40.sp,
                     modifier = modifier
                         .padding(top = 5.dp)
 
                 )
                 Text(
-                    text = stringResource(R.string.dev_desc),
+                    text = dev_desc,
                     fontWeight = FontWeight.Bold,
                     color=Color(0xFF1A794B),
                     fontSize = 14.sp,
@@ -123,7 +128,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
                     )
                     Text(
-                        text = stringResource(R.string.dev_phone),
+                        text = dev_phone,
                         Modifier
                             .padding(start = 25.dp)
                             .width(200.dp)
@@ -143,7 +148,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
                     )
                     Text(
-                        text = stringResource(R.string.dev_share),
+                        text = dev_share,
                         modifier = modifier
                             .padding(start = 25.dp)
                             .width(200.dp)
@@ -164,7 +169,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
                     )
                     Text(
-                        text = stringResource(R.string.dev_mail),
+                        text = dev_mail,
                         modifier = modifier
                             .padding(start = 25.dp)
                             .width(200.dp)
@@ -180,6 +185,12 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     BusinessCardTheme {
-        Greeting("Android")
+        Greeting(
+            dev_name = stringResource(R.string.dev_name),
+            dev_desc = stringResource(R.string.dev_desc),
+            dev_phone = stringResource(R.string.dev_phone),
+            dev_share = stringResource(R.string.dev_share),
+            dev_mail = stringResource(R.string.dev_mail),
+        )
     }
 }
